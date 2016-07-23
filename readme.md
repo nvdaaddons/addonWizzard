@@ -41,7 +41,7 @@ You need the following software to use this code for your NVDA add-ons developme
 
 - Download cookieCutter.  See above.
 - open a command prompt, or python capable shell (Unix shells should work as well).
-- type `cookiecutter https://github.com/nvdaaddons/addonWizzard`
+- type `cookiecutter https://github.com/nvdaaddons/addonWizzard.git`
 - when prompted, answer the following questions by typing on the command line. Do not leave any of the prompts blank.
     - authorName (Defaults to John Doe): Put the name of the authors, separated by commas here.
     - authorEmail (Defaults to John.Doe225830@blacklist.com): Place the authors emails here, separated by commas.
