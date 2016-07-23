@@ -1,0 +1,21 @@
+{
+	"authorName": "John Doe",
+	"authorEmail": "John.Doe225830@blacklist.com",
+	"projectName": "Simple Addon",
+	"project_slug": "{{ cookiecutter.projectName.lower().replace(' ', '_') }}",
+	"addonName": "simpleAddon",
+	"addonSummary": "This text shows up in the add-ons manager for the add-ons name. Keep it short, it's the user facing name.",
+	"addonDescription": "The add-on description can be edited later from buildVars.py, because it may be longer than one line.",
+	"version": "0.1.0-dev",
+	"addonURL": "None",
+	"createGlobalPlugin": "n",
+	"createAppModule": "n",
+	"useContinuousIntegrationWithTravisCI": "n",
+	"_copy_without_render": [
+		".sconstruct",
+		"scons*",
+		"appVeyor.yml",
+		"addon/globalPlugins/*",
+		"addon/appModules/*"
+	]
+}
