@@ -8,8 +8,8 @@
 	"addonDescription": "The add-on description can be edited later from buildVars.py, because it may be longer than one line.",
 	"version": "0.1.0-dev",
 	"addonURL": "None",
-	"createGlobalPlugin": "n",
-	"createAppModule": "n",
+	"createGlobalPlugin": "y",
+	"createAppModule": "y",
 	"useContinuousIntegrationWithTravisCI": "n",
 	"_copy_without_render": [
 		".sconstruct",

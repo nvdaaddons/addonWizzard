@@ -1,0 +1,9 @@
+Get your credentials ready.
+production:
+    python setup.py register -r pypi
+    python setup.py sdist upload -r pypi
+test:
+    python setup.py register -r https://testpypi.python.org/pypi
+    python setup.py sdist upload -r https://testpypi.python.org/pypi
+    ***To install from there:
+    pip install -i https://testpypi.python.org/pypi NVDA-addonTemplate

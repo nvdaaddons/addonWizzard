@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+#nvda-addonWizard: An addon generation template for NVDA.
+#Copyright (C) 2016 on behalf of the NVDA community by Derek Riemer.
+#see https://github.com/nvdaaddons/addonWizzard for more info.
+#This file is covered by the GNU General Public License.
+#See the file COPYING for more details.
+
 from __future__ import print_function
 import os
 import sys
@@ -13,11 +19,8 @@ if sys.version.startswith("2"):
 	input = raw_input
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-subTemplates = [
-	(pathjoin("addon", "globalPlugins"), []),
-	(pathjoin("addon", "appModules"), ("executableName",)),
-	#add to me when more plugin types are needed.
-]
+#list containing a subproject pathand any inputs to prompt the user for.
+subTemplates = []
 context = {
 	"copyrightYear" : datetime.datetime.now().year,
 	"authorName" : "{{ cookiecutter.authorName }}",
@@ -66,14 +69,19 @@ if __name__ == '__main__':
 	else:
 		print("Please visit appVeyor.yml for some instructions.")
 
-	if '{{ cookiecutter.createGlobalPlugin }}' != 'y':
-		removeTree(pathjoin("addon", "globalPlugins"))
-
-	if '{{ cookiecutter.createAppModule }}' != 'y':
-		removeTree(pathjoin("addon", "appModules"))
+	{% if cookiecutter.createGlobalPlugin != 'y' %}
+	removeTree(pathjoin("addon", "globalPlugins"))
+	{% else %}
+	subTemplates.append((pathjoin("addon", "globalPlugins"), []))
+	{% endif %}
+	
+	{% if cookiecutter.createAppModule != 'y' %}
+	removeTree(pathjoin("addon", "appModules"))
+	{% else %}
+	subTemplates.append((pathjoin("addon", "appModules"), ("executableName",)))
+	{% endif %}
 
 	# Go through addon, and run cookieCutter on the inner projects.
-	#Provide a whiteList in cookies to run cookieCutter on, I.E. globalPlugins doesn't require a cookie cutter to customize this, but appModules does.
 	for (template, extra) in ((pathjoin(PROJECT_DIRECTORY, i[0], "template"), i[1]) for i in subTemplates):
 		clonedContext = context.copy()
 		for arg in extra:
@@ -81,7 +89,8 @@ if __name__ == '__main__':
 		if os.path.exists(template):
 			cookiecutter(template , extra_context = clonedContext, output_dir=pathjoin(template, ".."), no_input=True)
 			removeTree(template, False)
-	
+	removeTree("__init__.py")
+
 	#Necessary to rename the sconsstruct only because we remove scons*if they don't want appVeyor.
 	renameFile(".sconstruct", "sconstruct")
 	

@@ -26,34 +26,41 @@ This template provides the following features you can use to help with NVDA add-
 
 ## Requirements
 
-You need the following software to use this code for your NVDA add-ons development:
-
 - a Python distribution (2.7 or greater is recommended). Check the [Python Website](http://www.python.org) for Windows Installers.
+
+All software required is automagically installed when you install the add-on template from pip. In case you can't get it from pip, you need to do this manually.
+
 - Scons - [Website](http://www.scons.org/) - version 2.1.0 or greater. Install it using **easy_install** or grab an windows installer from the website.
-<!-- - GNU Gettext tools, if you want to have localization support for your add-on - Recommended. Any Linux distro or cygwin have those installed. You can find windows builds [here](http://gnuwin32.sourceforge.net/downlinks/gettext.php). Note that this template automatically places these inside your addon when you walk through the setup wizard. -->
 - Markdown-2.0.1 or greater, if you want to convert documentation files to HTML documents. You can [Download Markdown-2.0.1 installer for Windows](https://pypi.python.org/pypi/Markdown/2.0.1) or get it using `easy_install markdown`.
 - cookie Cutter: This dependency automatically generates your add-on skeleton from parameters you provide to it. Install instructions: https://cookiecutter.readthedocs.io/en/latest/installation.html Or: ` $ pip install cookiecutter `
 
+Things that are currently included as experimental. Note that the executables for these might be removed in a future version, requiring you to manually obtain them.
+
+- GNU Gettext tools, if you want to have localization support for your add-on - Recommended. Any Linux distro or cygwin have those installed. You can find windows builds [here](http://gnuwin32.sourceforge.net/downlinks/gettext.php). Note that this template automatically places these inside your addon when you walk through the setup wizard. -->
 
 ## Usage
 
 ### To create a new NVDA add-on, taking advantage of this template: ###
 
-- Download cookieCutter.  See above.
 - open a command prompt, or python capable shell (Unix shells should work as well).
-- type `cookiecutter https://github.com/nvdaaddons/addonWizzard.git`
-- when prompted, answer the following questions by typing on the command line. Do not leave any of the prompts blank.
+- type `pip install NVDA-addonTemplate`
+- Once installed, cd to the directory you want your add-on in.
+- Then, simply type `NVDAAddonTemplate`
+- when prompted, answer the following questions by typing on the command line. The system will except no input as the default, and may yell at you if you answer some prompts invalidly.
     - authorName (Defaults to John Doe): Put the name of the authors, separated by commas here.
     - authorEmail (Defaults to John.Doe225830@blacklist.com): Place the authors emails here, separated by commas.
     - projectName (Defaults to "Simple Addon"): Place the project's name here, (Usually you'll put what you want the addon to be called, but if it's an addon with many components, this might be different.
-    - project_slug (defaults to the project name, with spaces turned into underscores.): This is what your folder will be named as. Warning: there is a known bug where if the folder name contains spaces, all but the first word are discarded.
     - addonName (Defaults to "simpleAddon"): The name (Internal identifyer) that NVDA uses to recognize this addon. This should be a valid python module name.
-    - addonSummary (Defaults to "This text shows up in the add-ons manager for the add-ons name. Keep it short, it's the user facing name."): This is the summary, or what your users will get to know for your addon. Something like "Indentone, musical indents" or "Tip of the Day" are good names.
-    - addonDescription (Defaults to "The add-on description can be edited later from buildVars.py, because it may be longer than one line."): This is the description your add-on shows when you press about. If you want a multiline description, go to buildVars.py and do that there.
+    - addonSummary (Defaults to "Simple Addon"): This is the summary, or what your users will get to know for your addon. Something like "Indentone, musical indents" or "Tip of the Day" are good names.
+    - addonDescription (Defaults to "This is my first add-on. It currently does nothing."): This is the description your add-on shows when you press about. If you want a multiline description, go to buildVars.py and do that there.
     - version (Defaults to "0.1.0-dev"): This is the version string you want your add-on to take on. Update this in buildVars.py whenever you release a new version.
     - addonURL (Defaults to None): Leave this as default if your add-on has no url, or put a url here to tell NVDA the url for this addon.
-    - createGlobalPlugin (Yes/no) (Defaults to no): Enter y if you want the template to generate a globalPlugin, or leave this as n if not. Note, lowercase y is the only option allowed for this, any other string is no.
-    - createAppModule (Yes/no) (Defaults to no): Enter y if you want the template to generate a appModule, or leave this as n if not. Note, lowercase y is the only option allowed for this, any other string is no.
-    - useContinuousIntegrationWithTravisCI (Yes/no) (Defaults to no): Enter y if you want the template to generate the necessary tools to use with travis CI, (A continuous integration system for windows) , or leave this as n if not. Note, lowercase y is the only option allowed for this, any other string is no.
+    - createGlobalPlugin (Yes/no) (Defaults to yes): Enter y or yes if you want the template to generate a globalPlugin, or n  if not. 
+    - createAppModule (Yes/no) (Defaults to yes): Enter y if you want the template to generate an appModule, or Type n otherwise.
+    - useContinuousIntegrationWithTravisCI (Yes/no) (Defaults to no): Enter y if you want the template to generate the necessary tools to use with travis CI, (A continuous integration system for windows) , or leave this as n if not.
     - If you said "y" to creating an app Module, you will be asked for the executable name. Enter the executable name for your appModule with no .exe.
+The add-on will be placed in your current directory with underscore characters replacing space characters in the directory name.
 
+## Todo;
+
+Generate a template for speech Synthesiser and braille display drivers. Priority is lower because the average joe won't be writing one of these.
