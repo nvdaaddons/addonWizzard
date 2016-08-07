@@ -61,6 +61,6 @@ Things that are currently included as experimental. Note that the executables fo
     - If you said "y" to creating an app Module, you will be asked for the executable name. Enter the executable name for your appModule with no .exe.
 The add-on will be placed in your current directory with underscore characters replacing space characters in the directory name.
 
-## Todo;
+## Todo
 
 Generate a template for speech Synthesiser and braille display drivers. Priority is lower because the average joe won't be writing one of these.
