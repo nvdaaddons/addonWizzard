@@ -10,7 +10,7 @@ def package_files(directory):
 	return paths
 
 setup(name='NVDA-addonTemplate',
-	version="0.5.2",
+	version="0.5.3",
 	description='Add-on template for writing NVDA add-ons',
 	author='Derek Riemer and NVDA contributers',
 	author_email='nvda-addons@freelists.org',

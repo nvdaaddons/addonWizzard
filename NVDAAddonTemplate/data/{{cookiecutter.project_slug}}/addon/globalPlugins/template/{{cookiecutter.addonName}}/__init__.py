@@ -1,14 +1,13 @@
-# {{cookiecutter.projectName}}: An Add-on for nvda that does <Insert thing here>
 {% if cookiecutter.addonURL != "None" %}
-#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorName }} <{{ cookiecutter.addonURL }}>
+#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorString }} <{{ cookiecutter.addonURL }}>
 {% else %}
-#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorName }}
+#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorString }}
 {% endif %}
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
 
 """{{ cookiecutter.addonName }}:
-A global plugin 
+A global plugin that does <Short description goes here>
 """
 
 import addonHandler

@@ -1,7 +1,7 @@
 {
 	"projectName": "simpleAddon",
 	"addonName": "simpleAddon",
-	"authorName": "John Doe",
+	"authorString": "John Doe",
 	"addonURL": "None",
 	"copyrightYear" : "1970"
 }

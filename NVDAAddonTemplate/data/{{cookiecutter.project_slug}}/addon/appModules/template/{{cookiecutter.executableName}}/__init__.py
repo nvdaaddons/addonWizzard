@@ -1,8 +1,8 @@
 # {{cookiecutter.projectName}}: An addon for {{ cookiecutter.executableName }}
 {% if cookiecutter.addonURL != "None" %}
-#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorName }} <{{ cookiecutter.addonURL }}>
+#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorString }} <{{ cookiecutter.addonURL }}>
 {% else %}
-#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorName }}
+#Copyright (C) {{ cookiecutter.copyrightYear }} {{ cookiecutter.authorString }}
 {% endif %}
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #nvda-addonWizard: An addon generation template for NVDA.
-#Copyright (C) 2016 on behalf of the NVDA community by Derek Riemer.
+#Copyright (C) 2017 on behalf of the NVDA community by Derek Riemer.
 #see https://github.com/nvdaaddons/addonWizzard for more info.
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
@@ -23,7 +23,7 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 subTemplates = []
 context = {
 	"copyrightYear" : datetime.datetime.now().year,
-	"authorName" : "{{ cookiecutter.authorName }}",
+	"authorString" : "{{ cookiecutter.authorString }}",
 	"projectName" : "{{ cookiecutter.projectName }}",
 	"addonName" : "{{ cookiecutter.addonName }}",
 	"addonURL" : "{{ cookiecutter.addonURL }}",
@@ -65,7 +65,6 @@ def removeTree(filepath, addProjDir=True):
 if __name__ == '__main__':
 	if '{{ cookiecutter.useContinuousIntegrationWithTravisCI}}' != 'y':
 		removeTree('appVeyor.yml')
-		removeAllTrees("scons*")
 	else:
 		print("Please visit appVeyor.yml for some instructions.")
 
@@ -90,7 +89,3 @@ if __name__ == '__main__':
 			cookiecutter(template , extra_context = clonedContext, output_dir=pathjoin(template, ".."), no_input=True)
 			removeTree(template, False)
 	removeTree("__init__.py")
-
-	#Necessary to rename the sconsstruct only because we remove scons*if they don't want appVeyor.
-	renameFile(".sconstruct", "sconstruct")
-	

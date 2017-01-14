@@ -21,7 +21,7 @@ addon_info = {
 	# version
 	"addon_version" : "{{ cookiecutter.version }}",
 	# Author(s)
-	"addon_author" : "{{ cookiecutter.authorName }} <{{ cookiecutter.authorEmail }}>",
+	"addon_author" : "{{ cookiecutter.authorString }}",
 	# URL for the add-on documentation support
 	{% if cookiecutter.addonURL != "None" %}
 	"addon_url" : "{{ cookiecutter.addonURL }}",

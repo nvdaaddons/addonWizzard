@@ -7,3 +7,6 @@ test:
     python setup.py sdist upload -r https://testpypi.python.org/pypi
     ***To install from there:
     pip install -i https://testpypi.python.org/pypi NVDA-addonTemplate
+Build in local test mode:
+	pip install -e <path_to_the_directory_where_setup.py_is>
+	Example assuming this directory: pip install -e .

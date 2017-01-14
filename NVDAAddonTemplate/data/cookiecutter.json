@@ -1,6 +1,5 @@
 {
-	"authorName": "John Doe",
-	"authorEmail": "John.Doe225830@blacklist.com",
+	"authorString": "john doe",
 	"projectName": "Simple Addon",
 	"project_slug": "{{ cookiecutter.projectName.lower().replace(' ', '_') }}",
 	"addonName": "simpleAddon",
