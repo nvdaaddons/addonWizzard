@@ -1,4 +1,4 @@
-# NVDA Add-on Scons Template  wizzard #
+# NVDA Add-on Scons Template  wizard #
 
 This package contains a command line wizard to create a basic template structure for NVDA add-on development, building, distribution and localization.
 For details about NVDA add-on development please see the [NVDA Developer Guide](http://www.nvda-project.org/documentation/developerGuide.html).
@@ -27,10 +27,10 @@ This template provides the following features you can use to help with NVDA add-
 ## Requirements
 
 - a Python distribution (2.7 or greater is recommended). Check the [Python Website](http://www.python.org) for Windows Installers.
+- Scons - [Website](http://www.scons.org/) - version 2.1.0 or greater. Install it using **easy_install** or grab an windows installer from the website.
 
 All software required is automagically installed when you install the add-on template from pip. In case you can't get it from pip, you need to do this manually.
 
-- Scons - [Website](http://www.scons.org/) - version 2.1.0 or greater. Install it using **easy_install** or grab an windows installer from the website.
 - Markdown-2.0.1 or greater, if you want to convert documentation files to HTML documents. You can [Download Markdown-2.0.1 installer for Windows](https://pypi.python.org/pypi/Markdown/2.0.1) or get it using `easy_install markdown`.
 - cookie Cutter: This dependency automatically generates your add-on skeleton from parameters you provide to it. Install instructions: https://cookiecutter.readthedocs.io/en/latest/installation.html Or: ` $ pip install cookiecutter `
 
@@ -63,4 +63,5 @@ The add-on will be placed in your current directory with underscore characters r
 
 ## Todo
 
-Generate a template for speech Synthesiser and braille display drivers. Priority is lower because the average joe won't be writing one of these.
+Generate an installTasks template. Priority is lower since most projects don't need this.
+Generate a template for speech Synthesiser and braille display drivers. Priority is way lower because the average joe won't be writing one of these.

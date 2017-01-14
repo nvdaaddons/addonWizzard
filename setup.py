@@ -10,14 +10,13 @@ def package_files(directory):
 	return paths
 
 setup(name='NVDA-addonTemplate',
-	version="0.5.0",
+	version="0.5.1",
 	description='Add-on template for writing NVDA add-ons',
 	author='Derek Riemer and NVDA contributers',
 	author_email='nvda-addons@freelists.org',
 	url='http://addons.nvda-project.org',
 	install_requires = [
 		"cookiecutter",
-		"scons",
 		"markdown",
 	],
 	packages=[
