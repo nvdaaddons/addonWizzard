@@ -118,7 +118,8 @@ def getInput(prompt, default = ""):
 	answer = ""
 	while answer == "":
 		print(prompt)
-		answer = input(default)
+		default_prompt = "The default value is:(" + default + ")Please enter your choice"
+		answer = input(default_prompt)
 		if answer == "":
 			answer = default
 		if default in ['y', 'n']:
