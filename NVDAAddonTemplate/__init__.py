@@ -118,7 +118,7 @@ def getInput(prompt, default = ""):
 	answer = ""
 	while answer == "":
 		print(prompt)
-		default_prompt = "The default value is: {default} Please enter a value, or press enter to accept the default.".format(default)
+		default_prompt = "The default value is: {default} Please enter a value, or press enter to accept the default.".format(default=default)
 		answer = input(default_prompt)
 		if answer == "":
 			answer = default
