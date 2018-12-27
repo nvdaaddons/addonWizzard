@@ -1,5 +1,5 @@
 #nvda-addonWizard: An addon generation template for NVDA.
-#Copyright (C) 2016 on behalf of the NVDA community by Derek Riemer.
+#Copyright (C) 2016-2018 on behalf of the NVDA community by Derek Riemer.
 #see https://github.com/nvdaaddons/addonWizzard for more info.
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
@@ -29,21 +29,19 @@ def emailAndAuthorFilter(string):
 	while len(emails) < len(authors):
 		emails.append("")
 	both = zip(authors, emails)
-	print(both)
 	bothStrings = []
 	for i in both:
 		if i[1]:
 			bothStrings.append("{0} <{1}>".format(*i))
 		else:
 			bothStrings.append(i[0])
-		print(bothStrings)
-	#bothStrings = [("{0} <{1}>".format(*i) if i[1] else i[0]) for i in both]
 	if len(bothStrings) == 1:
 		return bothStrings[0]
 	else:
 		bothStrings[-1]  = "and "+bothStrings[-1]
 		return ", ".join(bothStrings)
-"""Fields +explained.
+
+"""Fields explained.
 List of these.
 {
 	"prompt":"prompt text",

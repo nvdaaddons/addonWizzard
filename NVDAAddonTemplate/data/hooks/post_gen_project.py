@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #nvda-addonWizard: An addon generation template for NVDA.
-#Copyright (C) 2017 on behalf of the NVDA community by Derek Riemer.
+#Copyright (C) 2016-2018 on behalf of the NVDA community by Derek Riemer.
 #see https://github.com/nvdaaddons/addonWizzard for more info.
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
@@ -13,13 +13,14 @@ from os.path import join as pathjoin
 import glob
 import datetime
 from cookiecutter.main import cookiecutter
+
 #evil monkeypatch. Fix for python 2 input
 if sys.version.startswith("2"):
 	eval = input
 	input = raw_input
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
-#list containing a subproject pathand any inputs to prompt the user for.
+#list containing a subproject path and any inputs to prompt the user for.
 subTemplates = []
 context = {
 	"copyrightYear" : datetime.datetime.now().year,

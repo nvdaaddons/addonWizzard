@@ -20,9 +20,9 @@ deploy:
   release: $(APPVEYOR_REPO_TAG_NAME)
   description: $(APPVEYOR_REPO_TAG_NAME)
   provider: GitHub
-  #Replace the secure text here with an encrypted github token (Google "appVeyor encrypted environment variables" for more info).
+  #Replace the text here with an encrypted github token (Google "appVeyor encrypted environment variables" for more info).
   auth_token:
-    secure: D6nDTGin+O15mi48HCwAAu4gXJyUMxQd31t84RdWEFlfzYfgbu4FTH2VLC6l46Fy
+    secure: <PLACE KEY HERE>
   artifact: addon
   draft: false
   prerelease: false

@@ -5,7 +5,7 @@ For details about NVDA add-on development please see the [NVDA Developer Guide](
 The NVDA addon development/discussion list [is here](http://www.freelists.org/list/nvda-addons). 
 Unless you wish to work on this template, I.E. update things, there is no need to clone this repository to simply create the basic structure of your addon.
 
-Copyright (C) 2012-2016 nvda addon team contributors.
+Copyright (C) 2012-2018 nvda addon team contributors.
 
 This package is distributed under the terms of the GNU General Public License, version 2 or later. Please see the file COPYING.txt for further details.
 
@@ -50,7 +50,7 @@ Things that are currently included as experimental. Note that the executables fo
     - authorName (Defaults to John Doe): Put the name of the authors, separated by commas here.
     - authorEmail (Defaults to John.Doe225830@blacklist.com): Place the authors emails here, separated by commas.
     - projectName (Defaults to "Simple Addon"): Place the project's name here, (Usually you'll put what you want the addon to be called, but if it's an addon with many components, this might be different.
-    - addonName (Defaults to "simpleAddon"): The name (Internal identifyer) that NVDA uses to recognize this addon. This should be a valid python module name.
+    - addonName (Defaults to "simpleAddon"): The name (Internal identifyer) that NVDA uses to recognize this addon. This should be a valid python module name. *No spaces are allowed!*
     - addonSummary (Defaults to "Simple Addon"): This is the summary, or what your users will get to know for your addon. Something like "Indentone, musical indents" or "Tip of the Day" are good names.
     - addonDescription (Defaults to "This is my first add-on. It currently does nothing."): This is the description your add-on shows when you press about. If you want a multiline description, go to buildVars.py and do that there.
     - version (Defaults to "0.1.0-dev"): This is the version string you want your add-on to take on. Update this in buildVars.py whenever you release a new version.

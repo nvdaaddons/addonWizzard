@@ -38,6 +38,10 @@ import os.path
 # Define the python files that are the sources of your add-on.
 # You can use glob expressions here, they will be expanded.
 pythonSources = [
+	#Warning: if you have files that don't end in .py,
+	#for translation sources, replace this with a loop
+	# That detects generated files.
+	# Otherwise, gettext will attempt to find translation strings for everything, including packaged binary files like .wav and .dll files.
 	{% if cookiecutter.createGlobalPlugin == "y" %}
 	os.path.join("addon", "globalPlugins", "{{ cookiecutter.addonName}}", "*"),
 	{% endif %}

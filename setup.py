@@ -12,8 +12,8 @@ def package_files(directory):
 setup(name='NVDA-addonTemplate',
 	version="0.5.3",
 	description='Add-on template for writing NVDA add-ons',
-	author='Derek Riemer and NVDA contributers',
-	author_email='nvda-addons@freelists.org',
+	author='Derek Riemer and NVDA contributors',
+	author_email='nvda-addons@groups.io',
 	url='http://addons.nvda-project.org',
 	install_requires = [
 		"cookiecutter",
